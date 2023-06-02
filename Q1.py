@@ -118,6 +118,7 @@ while not crashed:
     BLUE=(0,0,255)
     RED=(255,0,0)
     GREEN=(0,255,0)
+    PINK = (255,192,203)
 
     GT()
     
@@ -134,6 +135,7 @@ while not crashed:
     if (t%8)==0:
         zt()
         KF_measurement()
+        pygame.draw.circle(gameDisplay, PINK, ([KFx[0,0]*1000,KFx[1,0]*1000]),10)
         
     # KF DRAWING
     pygame.draw.polygon(gameDisplay, GREEN,

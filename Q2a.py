@@ -34,7 +34,7 @@ Rt = np.array([[wsigmax2,0.,0.],[0.,wsigmax2,0.],[0.,0.,wsigmay2]])*T # no need 
 
 rsigmax2 = 0.05
 rsigmay2 = 0.075
-Qt = np.array([[rsigmax2,0,0],[0,rsigmay2,0],[0,0,0]])*T # no need to square again
+Qt = np.array([[rsigmax2,0,0],[0,rsigmay2,0],[0,0,0]]) # no need to square again
 
 def GT():
     global GTx
@@ -137,6 +137,7 @@ while not crashed:
     BLUE=(0,0,255)
     RED=(255,0,0)
     GREEN=(0,255,0)
+    PINK = (255,192,203)
 
     GT()
     
@@ -153,6 +154,7 @@ while not crashed:
     if (t%8)==0:
         zt()
         KF_measurement()
+        pygame.draw.circle(gameDisplay, PINK, ([KFx[0]*1000,KFx[1]*1000]),10)
         
     # KF DRAWING
     pygame.draw.polygon(gameDisplay, GREEN,
